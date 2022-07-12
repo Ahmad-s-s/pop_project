@@ -58,11 +58,25 @@ void edit (char **v, char **v_o) {
     fclose(fp);
     printf("welcome to edit part, you can choose a form design to edit it, here's all"
            " form name, choose one :\n");
-    for (int i = 0; i < t; ++i) {
-        printf("^ %s ^\n", all_forms[i]);
+    while (1){
+        int flag_accepted = 0;
+        for (int i = 0; i < t; ++i) {
+            printf("^ %s ^\n", all_forms[i]);
+        }
+        printf("-> ");
+        scanf("%s", selected_form);
+        for (int i = 0; i < t; ++i) {
+            if (strcmp(all_forms[i], selected_form) == 0) {
+                flag_accepted = 1;
+                break;
+            }
+        }
+        if (flag_accepted ==1) {
+            break;
+        }else {
+            printf("wrong name, try again :\n");
+        }
     }
-    printf("-> ");
-    scanf("%s", selected_form);
     strcat(selected_form, ".txt");
     fp = fopen(selected_form, "r");
     read_from_file(fp, v);
