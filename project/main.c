@@ -2,11 +2,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include "phase_one.h"
-
-
-void edit () {
-
-}
+#include "phase_two.h"
 
 void run () {
     scanf("%d");
@@ -48,7 +44,7 @@ void choose_mode () {
                 design(view_port, view_port_oc);
                 break;
             case 2:
-                edit();
+                edit(view_port, view_port_oc);
                 break;
             case 3:
                 run();

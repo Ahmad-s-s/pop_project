@@ -1,3 +1,4 @@
 # ninja log v5
-2	132	6792739290028147	CMakeFiles/project.dir/main.c.obj	f90a357ded4f7244
-133	249	6792739291057758	project.exe	5dc97e7ceea55104
+2	133	6793095034648421	CMakeFiles/project.dir/main.c.obj	f90a357ded4f7244
+134	241	6793095035704215	project.exe	5dc97e7ceea55104
+1	289	6793099648727488	build.ninja	5f876dbe5fe966aa

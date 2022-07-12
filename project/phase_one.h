@@ -1,4 +1,4 @@
-//
+ //
 // Created by Ehsan on 7/12/2022.
 //
 
@@ -11,6 +11,15 @@
 #include <stdio.h>
 #include <unistd.h>
 
+ void print_view_o (char **v) {
+     for (int i = 0; i < 10; ++i) {
+         printf("%s\n", v[i]);
+     }
+     for (int i = 0; i < 120; ++i) {
+         printf("*");
+     }
+     printf("\n");
+ }
 
 void print_view (char **v) {
     for (int i = 0; i < 12; ++i) {
@@ -24,13 +33,17 @@ void print_view (char **v) {
 
 void print_in_file (FILE *fp, char **v) {
     for (int i = 0; i < 12; ++i) {
-        fputs(v[i], fp);
+        for (int j = 0; j < 121; ++j) {
+            fputc(v[i][j], fp);
+        }
     }
 }
 
 void read_from_file (FILE *fp, char **v) {
     for (int i = 0; i < 12; ++i) {
-        fgets(v[i], 120, fp);
+        for (int j = 0; j < 121; ++j) {
+            v[i][j] = fgetc(fp);
+        }
         v[i][121] = '\0';
     }
 }
@@ -268,6 +281,7 @@ void design (char **v, char **v_o) {
                 break;
             default:
                 printf("wrong input, try again\n");
+                sleep(1);
         }
         if (flag_exit == 1) {
             printf("your form designed and saved successfully\n");
